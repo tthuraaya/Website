@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Your Business Name – Software, Games &amp; Intelligent Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5fb; --surface:#ffffff; --ink:#14142b; --muted:#585a78; --line:#d9dbea;
+  --accent:#5a3cf0; --accent2:#e4572e; --accent-ink:#ffffff; --node:90,60,240;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0e1d; --surface:#151834; --ink:#eceaf9; --muted:#9ea0c4; --line:#262a52;
+    --accent:#8e7dff; --accent2:#ff9566; --accent-ink:#0c0e1d; --node:142,125,255;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0e1d; --surface:#151834; --ink:#eceaf9; --muted:#9ea0c4; --line:#262a52;
+  --accent:#8e7dff; --accent2:#ff9566; --accent-ink:#0c0e1d; --node:142,125,255; color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 clamp(16px,1.05vw + 12px,18px)/1.6 var(--body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent2);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-.02em}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font:800 1.1rem var(--display);text-decoration:none}
+.mark{width:26px;height:26px;border-radius:8px;background:conic-gradient(from 200deg,var(--accent),var(--accent2),var(--accent));position:relative}
+.mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg)}
+nav{display:flex;align-items:center;gap:1.4rem}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:999px;background:var(--accent);color:var(--accent-ink)!important;font-weight:700;text-decoration:none;border:0;min-height:44px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)!important;border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+@media (max-width:720px){nav a:not(.btn){display:none}}
+
+/* hero */
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:center;padding:4rem 0;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.6rem,8vw,6rem);font-weight:800;max-width:14ch}
+.hero h1 span{display:block;color:var(--muted)}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.15em;margin:1.5rem 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* services */
+section{padding:5rem 0}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:2.5rem}
+.head h2{font-size:clamp(2rem,5vw,3.4rem);max-width:16ch}
+.head p{max-width:40ch;color:var(--muted);margin:0}
+.row{display:grid;grid-template-columns:1.1fr 1.6fr 1fr;gap:2rem;align-items:start;padding:2rem 0;border-top:1px solid var(--line);transition:background .25s,padding .25s}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{background:var(--surface);padding-inline:1.2rem}
+.row h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.row p{margin:0;color:var(--muted)}
+.row ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.45rem}
+.row li{font-size:.85rem;padding:.25rem .7rem;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+@media (max-width:860px){.row{grid-template-columns:1fr;gap:.9rem}.row:hover{padding-inline:0;background:none}}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.6rem;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:800 1rem var(--display);margin-bottom:1.1rem}
+.step h3{font-size:1.35rem;margin-bottom:.5rem}
+.step p{margin:0;color:var(--muted);font-size:.95em}
+
+/* global */
+.globe{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.globe h2{font-size:clamp(2rem,5vw,3.4rem)}
+.globe p{color:var(--muted);max-width:46ch}
+.zones{display:grid;gap:.6rem}
+.zone{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.3rem;border-radius:16px;background:var(--surface);border:1px solid var(--line);font-weight:500}
+.zone b{font-family:var(--display);font-size:1.15rem}
+.zone span{color:var(--muted);font-size:.9rem}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--accent2);margin-right:.7rem}
+@media (max-width:860px){.globe{grid-template-columns:1fr;gap:2rem}}
+
+/* contact */
+.contact{margin-bottom:3rem;padding:clamp(2rem,6vw,4.5rem);border-radius:32px;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 55%,var(--accent2)));color:var(--accent-ink);text-align:center}
+.contact h2{font-size:clamp(2rem,6vw,4rem);max-width:15ch;margin:0 auto 1rem}
+.contact p{max-width:44ch;margin:0 auto 2rem;opacity:.9}
+.contact .btn{background:var(--accent-ink);color:var(--accent)!important}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero p,.cta{animation:in .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero p{animation-delay:.12s}.cta{animation-delay:.24s}
+  @keyframes in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.row{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><span class="mark"></span>Your Business Name</a>
+    <nav>
+      <a href="#services">What we do</a>
+      <a href="#process">How we work</a>
+      <a href="#global">Worldwide</a>
+      <a class="btn" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <h1>We build what runs, plays and thinks.<span>Software. Games. Automation.</span></h1>
+      <p>A small team shipping apps, games and intelligent automation for companies in every time zone. Tell us the problem; we’ll bring back something that works.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Start a project</a>
+        <a class="btn ghost" href="#services">See what we do</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <h2>Three crafts, one team.</h2>
+        <p>Pick one, or combine them. The same engineers work across all three.</p>
+      </div>
+      <div class="row">
+        <h3>Software development</h3>
+        <p>Web platforms, mobile apps and internal tools, built to be fast, secure and easy to maintain long after launch.</p>
+        <ul><li>Web apps</li><li>Mobile</li><li>APIs</li><li>Cloud</li></ul>
+      </div>
+      <div class="row">
+        <h3>Game development</h3>
+        <p>From prototype to release: gameplay, art pipelines and multiplayer backends for mobile, PC and console.</p>
+        <ul><li>Unity</li><li>Unreal</li><li>Multiplayer</li><li>Live ops</li></ul>
+      </div>
+      <div class="row">
+        <h3>Intelligent automation</h3>
+        <p>AI agents and workflows that take over repetitive work, connect your systems and free your people for the hard parts.</p>
+        <ul><li>AI agents</li><li>Workflows</li><li>Integrations</li><li>Data</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head">
+        <h2>From idea to launch in four steps.</h2>
+        <p>Clear milestones and weekly demos, so you always see progress.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Discover</h3><p>We learn your goals, users and constraints, then agree on scope.</p></div>
+        <div class="step"><h3>Design</h3><p>Prototypes and technical plans you can react to before we build.</p></div>
+        <div class="step"><h3>Build</h3><p>Short sprints with working demos every week.</p></div>
+        <div class="step"><h3>Launch &amp; grow</h3><p>We ship, monitor and keep improving after release.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="global">
+    <div class="wrap globe">
+      <div>
+        <h2>Working worldwide, around the clock.</h2>
+        <p>Remote-first by design. We overlap with your working hours wherever you are, and communicate in plain language, in writing and on calls.</p>
+      </div>
+      <div class="zones" id="zones" aria-label="Local times"></div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:1rem">
+    <div class="wrap">
+      <div class="contact">
+        <h2>Have something in mind?</h2>
+        <p>Send us a few lines about your project. We reply within one business day.</p>
+        <a class="btn" href="mailto:hello@yourbusiness.com">hello@yourbusiness.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Your Business Name. All rights reserved.</span>
+    <span>Software · Games · Automation</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // local times
+  var cities=[["San Francisco","America/Los_Angeles"],["London","Europe/London"],["Dubai","Asia/Dubai"],["Singapore","Asia/Singapore"]];
+  var box=document.getElementById('zones');
+  function tick(){
+    box.innerHTML=cities.map(function(c){
+      var t="";try{t=new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",timeZone:c[1]})}catch(e){}
+      return '<div class="zone"><span><i class="dot"></i>'+c[0]+'</span><b>'+t+'</b></div>';
+    }).join("");
+  }
+  tick();setInterval(tick,30000);
+
+  // network canvas
+  var cv=document.getElementById('net'),ctx=cv.getContext('2d'),W,H,pts=[],mx=-999,my=-999;
+  var still=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){
+    var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);
+    W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+    var n=Math.round(Math.min(70,W*H/16000));
+    pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35});
+  }
+  function draw(){
+    var rgb=getComputedStyle(document.documentElement).getPropertyValue('--node').trim()||'90,60,240';
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      if(!still){
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0||p.x>W)p.vx*=-1;
+        if(p.y<0||p.y>H)p.vy*=-1;
+        var dx=mx-p.x,dy=my-p.y,dd=dx*dx+dy*dy;
+        if(dd<22000){p.x+=dx*.004;p.y+=dy*.004}
+      }
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],ax=p.x-q.x,ay=p.y-q.y,dist=ax*ax+ay*ay;
+        if(dist<15000){ctx.strokeStyle='rgba('+rgb+','+(.28*(1-dist/15000))+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}
+      }
+      ctx.fillStyle='rgba('+rgb+',.6)';ctx.beginPath();ctx.arc(p.x,p.y,2,0,6.283);ctx.fill();
+    }
+    if(!still)requestAnimationFrame(draw);
+  }
+  cv.parentNode.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  cv.parentNode.addEventListener('pointerleave',function(){mx=my=-999});
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){size();if(still)draw()},150)});
+  window.matchMedia('(prefers-color-scheme:dark)').addEventListener&&window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(){if(still)draw()});
+  size();draw();
+})();
+</script>
+</body>
+</html>
